@@ -30,7 +30,7 @@ app.use((req, res, next) => {
 
 app.use(require("./routes"));
 app.use(require("./routes/auth"));
-app.use(require("./routes/links"));
+app.use("/links", require("./routes/links"));
 
 app.use(express.static(path.join(__dirname, "public")));
 
