@@ -11,11 +11,19 @@
             </a>
             <p class="m-2">{{description}}</p>
             <p>{{timeago created_at}}</p>
-            <a href="" class="btn btn-danger">Delete this link</a>
+            <a href="/links/delete/{{id}}" class="btn btn-danger">Delete this
+              link</a>
             <a href="" class="btn btn-secondary">Edit</a>
           </div>
         </div>
       </div>
-    {{/each}}
+    {{else}}
+      <div class="col-md-4 mx-auto">
+        <div class="card-body text-center">
+          <h1>No liks saved yet :c</h1>
+          <a href="/links/add" class="btn btn-success">Create a link now!</a>
+        </div>
+      </div>
   </div>
+    {{/each}}
 </div>
