@@ -11,7 +11,7 @@ const passport = require("passport");
 const app = express();
 require("./lib/passport");
 
-app.set("port", process.env.PORT || 4000);
+var port = process.env.PORT || 8000;
 app.set("views", path.join(__dirname, "views"));
 app.engine(
   ".hbs",
@@ -54,6 +54,6 @@ app.use("/links", require("./routes/links"));
 
 app.use(express.static(path.join(__dirname, "public")));
 
-app.listen(app.get("port"), () => {
+app.listen(port, () => {
   console.log("server on port", app.get("port"));
 });
